@@ -45,8 +45,8 @@ cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-auto
 ```
 ##### delimiter :
 
-This is the text which appears just before the OTP in the sms content. For example, if the SMS content is 'Your OTP is 6367' , then delimiter should be set to 'is'. The delimiter can also be set with an empty value , incase if the SMS content starts with the OTP.
-For example, if the SMS content is '6367 is your one time password', then the delimiter should be set to ''.
+This is the text which appears just before the OTP in the SMS content. For example, if the SMS content is 'Your OTP is 6367' , then delimiter should be set to 'is'. The delimiter can also be set with an empty value , incase if the SMS content starts with the OTP.
+For example, if the SMS content is '6367 is your one time password', then the delimiter should be set to ' '.
 
 ##### length :
  
