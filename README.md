@@ -29,6 +29,8 @@ cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-auto
 
 		  smsOtpAutofill.startOTPListener(successCallback,errorCallback,options);
 
+	  } else {
+	  	//Set the result (OTP value) to text field
 	  }
 
 	}
