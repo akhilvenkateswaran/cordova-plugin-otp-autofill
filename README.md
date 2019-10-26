@@ -31,7 +31,7 @@ cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-auto
 
 	  } else {
 	  
-	  	//Set the result (OTP value) to text field
+	  	//Set the result (OTP value) to the field
 		
 	  }
 
