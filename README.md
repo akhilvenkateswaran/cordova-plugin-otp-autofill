@@ -1,6 +1,15 @@
 # cordova-plugin-otp-autofill
 
+### Description
 
+This plugin extracts the OTP of required length from the received SMS.
+
+### Installation
+
+```
+cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-autofill.git
+
+```
 ## Example
 
 ```
@@ -47,6 +56,7 @@ This is the 6-character sender ID of the received SMS. For example, if the sende
 ##### timeout :
 
 This is time (in seconds) until which the plugin listens for the SMS. For example, if the timeout is set to 60, then the plugin waits for 60 seconds to receive the SMS and extract the OTP. If the SMS is not received in 60 seconds, then the plugin returns a 'Resend OTP' message.
+
 
 
 ### Supported Platforms
