@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-otp-autofill" version="0.0.1">
+    <name>SmsOTPAutoFillPlugin</name>
+
+    <description>An Android Cordova plugin that auto populates received otp through sms.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,sms,otp,autofill,autoverify</keywords>
+    <repo>https://github.com/akhilvenkateswaran/SmsReceiverPlugin.git</repo>
+    <issue>https://github.com/akhilvenkateswaran/SmsReceiverPlugin/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/smsOtpAutofill.js" name="smsOtpAutofillPlugin">
+        <clobbers target="smsOtpAutofill" />
+    </js-module>
+    <platform name="android">
+		
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.RECEIVE_SMS" />
+            <uses-permission android:name="android.permission.READ_SMS" />
+		</config-file>
+        
+		<config-file target="res/xml/config.xml" parent="/*">
+            <feature name="SmsOtpAutofill">
+                <param name="android-package" value="org.apache.cordova.smsotpautofill.SmsOtpAutofill"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/SmsOtpAutofill.java" target-dir="src/org/apache/cordova/smsotpautofill" />
+    </platform>
+</plugin>

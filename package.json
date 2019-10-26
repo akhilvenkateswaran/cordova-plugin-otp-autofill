@@ -1,0 +1,35 @@
+{
+  "name": "cordova-plugin-otp-autofill",
+  "version": "0.0.1",
+  "description": "An Android Cordova plugin that auto populates received otp through sms.",
+  "cordova": {
+    "id": "cordova-plugin-otp-autofill",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhilvenkateswaran/SmsReceiverPlugin.git"
+  },
+  "keywords": [
+    "SMS",
+    "OTP",
+    "Autofill",
+    "AutoVerify",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": 
+  {
+    "name":"cordova",
+    "version":">=3.0.0"
+  }
+  ,
+  "author": "Akhil Venkateswaran <akhil.venkateswaran@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akhilvenkateswaran/SmsReceiverPlugin.git/issues"
+  },
+  "homepage": "https://github.com/akhilvenkateswaran/SmsReceiverPlugin"
+}
