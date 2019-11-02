@@ -31,16 +31,23 @@ cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-auto
 	smsOtpAutofill.startOTPListener(successCallback,errorCallback,options);
 ```
 
-### Parameters
+### Function Parameters
 
-- _successCallback_: 
-- _errorCallback_:
-- _options_:
+- _successCallback_: This callback function is executed when OTP is extracted successfully.
+- _errorCallback_: This callback function is executed if an error occurs (eg. when options are empty or sms permissions are denied).
+- _options_: the OTP options
 
 
 ## Example
 
-```
+```	
+	var options = {
+		otpLength: 4,
+		delimiter: 'is',
+		senderID: 'WAYSMS',
+		timeout: 60
+	    }
+	    
 	function successCallback(result) {
 
 	  if(result === 'Resend OTP') {
@@ -56,19 +63,21 @@ cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-auto
 	}
 
 
-	function errorCallback(result) {
+	function errorCallback(message) {
 
 	}
+	
+	smsOtpAutofill.startOTPListener(successCallback,errorCallback,options);
 
 ```
 
 
 ## OTP options
 
-Optional parameters to customize the retrieval of the geolocation
-`Position`.
+Parameters to customize the retrieval of the OTP.
 
      { otpLength: 4, delimiter: 'is', senderID: 'WAYSMS', timeout: 60}
+     
 
 ### Options
 
