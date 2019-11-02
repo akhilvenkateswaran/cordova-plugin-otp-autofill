@@ -38,7 +38,7 @@ cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-auto
 - _options_: the OTP options
 
 
-## Example
+### Example
 
 ```	
 	var options = {
@@ -72,7 +72,7 @@ cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-auto
 ```
 
 
-## OTP options
+### OTP options
 
 Parameters to customize the retrieval of the OTP.
 
