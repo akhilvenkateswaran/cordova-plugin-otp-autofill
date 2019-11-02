@@ -37,6 +37,8 @@ public class SmsOtpAutofill extends CordovaPlugin {
         super.onRequestPermissionResult(requestCode, permissions, grantResults);
         if(grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             startCountDownTimer();
+        } else if(grantResults[0] == PackageManager.PERMISSION_DENIED) {
+            otpCallbackContext.error("SMS permissions have been denied; please enable it in the Settings app to continue.");
         }
     }
 
@@ -55,14 +57,17 @@ public class SmsOtpAutofill extends CordovaPlugin {
                     delimiter += " ";
                 }
 
+                checkPermissions();
+                PluginResult pluginResult = new PluginResult(PluginResult.Status.NO_RESULT);
+                pluginResult.setKeepCallback(true);
+                callbackContext.sendPluginResult(pluginResult);
+                return true;
+
             } catch (JSONException e){
                 e.printStackTrace();
+                otpCallbackContext.error("Please enter all of the required options");
             }
-            checkPermissions();
-            PluginResult pluginResult = new PluginResult(PluginResult.Status.NO_RESULT);
-            pluginResult.setKeepCallback(true);
-            callbackContext.sendPluginResult(pluginResult);
-            return true;
+
         }
         return false;
     }
