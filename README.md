@@ -1,8 +1,10 @@
 # cordova-plugin-otp-autofill
 
+
 ### Description
 
 This plugin extracts the OTP of required length from the received SMS.
+
 
 
 ### Supported Platforms
@@ -27,8 +29,18 @@ cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-auto
 	    }
 
 	smsOtpAutofill.startOTPListener(successCallback,errorCallback,options);
+```
+
+### Parameters
+
+- _successCallback_: 
+- _errorCallback_:
+- _options_:
 
 
+## Example
+
+```
 	function successCallback(result) {
 
 	  if(result === 'Resend OTP') {
@@ -66,7 +78,7 @@ Optional parameters to customize the retrieval of the geolocation
 
 - __senderID__: This is the 6-character sender ID of the received SMS. For example, if the sender name of the received SMS is 'QP-WAYSMS' , then the senderID should be set to 'WAYSMS'. Incase if the message is sent without a SMS service provider, senderID should be set to the 10-digit mobile number of the sender. _(String)_
 
-__timeout__: This is time (in seconds) until which the plugin listens for the SMS. For example, if the timeout is set to 60, then the plugin waits for 60 seconds to receive the SMS and extract the OTP. If the SMS is not received in 60 seconds, then the plugin returns a 'Resend OTP' message. _(Number)_
+- __timeout__: This is time (in seconds) until which the plugin listens for the SMS. For example, if the timeout is set to 60, then the plugin waits for 60 seconds to receive the SMS and extract the OTP. If the SMS is not received in 60 seconds, then the plugin returns a 'Resend OTP' message. _(Number)_
 
 
 
