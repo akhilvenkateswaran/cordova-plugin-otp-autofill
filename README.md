@@ -4,13 +4,19 @@
 
 This plugin extracts the OTP of required length from the received SMS.
 
+
+### Supported Platforms
+
+- Android
+
+
 ### Installation
 
 ```
 cordova plugin add https://github.com/akhilvenkateswaran/cordova-plugin-otp-autofill.git
 
 ```
-### Example
+### Usage
 
 ```
 	var options = {
@@ -63,9 +69,7 @@ This is time (in seconds) until which the plugin listens for the SMS. For exampl
 
 
 
-### Supported Platforms
 
-- Android
 
     
     
