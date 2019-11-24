@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-otp-autofill",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An Android Cordova plugin that auto populates otp received through sms.",
   "cordova": {
     "id": "cordova-plugin-otp-autofill",
