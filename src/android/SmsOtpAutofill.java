@@ -84,33 +84,49 @@ public class SmsOtpAutofill extends CordovaPlugin {
     private void startCountDownTimer() {
 
         registerReceiver();
-        countDownTimer = new CountDownTimer(timeout*1000, 1000) {
-            @Override
-            public void onTick(long l) {
-
-            }
-
-            @Override
-            public void onFinish() {
-                unregisterReceiver();
-                updateCallbackStatus(otpCallbackContext,"Resend OTP");
-            }
-        };
-
-        countDownTimer.start();
-
+        startCounter();
     }
 
-    private void registerReceiver() {
+    private void startCounter() {
+      countDownTimer = new CountDownTimer(timeout*1000, 1000) {
+          @Override
+          public void onTick(long l) {
+
+          }
+
+          @Override
+          public void onFinish() {
+              unregisterReceiver();
+              updateCallbackStatus(otpCallbackContext,"Resend OTP");
+          }
+      };
+
+      countDownTimer.start();
+    }
+
+  private void registerReceiver() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(BroadcastAction);
+        unregisterBroadcastReceiver();
+        if(null != countDownTimer){
+          countDownTimer.cancel();
+        }
+        startCounter();
         cordova.getActivity().getApplicationContext().registerReceiver(broadcastReceiver,intentFilter);
     }
 
     private void unregisterReceiver() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(BroadcastAction);
+        unregisterBroadcastReceiver();
+    }
+
+    private void unregisterBroadcastReceiver(){
+      try{
         cordova.getActivity().getApplicationContext().unregisterReceiver(broadcastReceiver);
+      } catch(Exception e) {
+        e.printStackTrace();
+      }
     }
 
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
