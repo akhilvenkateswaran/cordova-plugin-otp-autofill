@@ -10,7 +10,7 @@ This plugin extracts the OTP of required length from the received SMS.
 ### Installation
 
 ```
-cordova plugin add cordova-plugin-otp-autofill
+cordova plugin add cordova-plugin-otp-autofill-v2
 
 ```
 
