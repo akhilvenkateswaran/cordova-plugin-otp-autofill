@@ -1,4 +1,4 @@
-# cordova-plugin-otp-autofill
+# cordova-plugin-otp-autofill-v2
 
 
 ### Description
